@@ -1,0 +1,94 @@
+[
+    {
+        "weather": {
+            "coord": {
+                "lon": -0.1257,
+                "lat": 51.5085
+            },
+            "weather": [
+                {
+                    "id": 803,
+                    "main": "Clouds",
+                    "description": "broken clouds",
+                    "icon": "04n"
+                }
+            ],
+            "base": "stations",
+            "main": {
+                "temp": 287.96,
+                "feels_like": 287.56,
+                "temp_min": 287.31,
+                "temp_max": 288.58,
+                "pressure": 1023,
+                "humidity": 79
+            },
+            "visibility": 10000,
+            "wind": {
+                "speed": 5.14,
+                "deg": 210
+            },
+            "clouds": {
+                "all": 75
+            },
+            "dt": 1668125743,
+            "sys": {
+                "type": 2,
+                "id": 2075535,
+                "country": "GB",
+                "sunrise": 1668150682,
+                "sunset": 1668183466
+            },
+            "timezone": 0,
+            "id": 2643743,
+            "name": "London",
+            "cod": 200
+        },
+        "feeling": "happy"
+    },
+    {
+        "weather": {
+            "coord": {
+                "lon": 2.3488,
+                "lat": 48.8534
+            },
+            "weather": [
+                {
+                    "id": 804,
+                    "main": "Clouds",
+                    "description": "overcast clouds",
+                    "icon": "04n"
+                }
+            ],
+            "base": "stations",
+            "main": {
+                "temp": 282.84,
+                "feels_like": 280.3,
+                "temp_min": 281.69,
+                "temp_max": 283.58,
+                "pressure": 1030,
+                "humidity": 89
+            },
+            "visibility": 10000,
+            "wind": {
+                "speed": 5.14,
+                "deg": 160
+            },
+            "clouds": {
+                "all": 100
+            },
+            "dt": 1668125973,
+            "sys": {
+                "type": 2,
+                "id": 2041230,
+                "country": "FR",
+                "sunrise": 1668149586,
+                "sunset": 1668183374
+            },
+            "timezone": 3600,
+            "id": 2988507,
+            "name": "Paris",
+            "cod": 200
+        },
+        "feeling": "neutral"
+    }
+]

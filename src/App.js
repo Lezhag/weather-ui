@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import './styles.css';
+import { useEffect, useState } from 'react';
+import { Journal } from './components/Journal';
+import { WeatherInfo } from './components/WeatherInfo';
+import data from './mock.json'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [weatherData, setWeatherData] = useState(data);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const response = await fetch('/all');
+            const data = await response.json();
+            setWeatherData(data);
+        }
+        fetchData();
+    }, []);
+
+    return (
+        <>
+            <Journal/>
+            <WeatherInfo data={weatherData}/>
+        </>
+    )
 }
 
 export default App;
