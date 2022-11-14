@@ -19,7 +19,7 @@ function App() {
     return (
         <>
             <Journal/>
-            <WeatherInfo data={weatherData}/>
+            <WeatherInfo data={data}/>
         </>
     )
 }
