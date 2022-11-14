@@ -1,18 +1,20 @@
+import './style.css';
+
 const WeatherItem = ({ weather, feeling }) => {
     return (
-        <div className="">
-            <p>City: {weather.name}</p>
-            <p>Temperature: {weather.main.temp}</p>
-            <p>Weather: {weather.weather[0].description}</p>
-            <p>Feeling: {feeling}</p>
-        </div>
+        <ul className="weather-item">
+            <li><strong>City:</strong>&nbsp;{weather.name}</li>
+            <li><strong>Temperature:</strong>&nbsp;{weather.main.temp}F</li>
+            <li><strong>Weather:</strong>&nbsp;{weather.weather[0].description}</li>
+            <li><strong>Feeling:</strong>&nbsp;{feeling}</li>
+        </ul>
     );
 };
 
-export const WeatherInfo = (data = []) => {
+export const WeatherInfo = ({ data = [] }) => {
     return (
         <section className="weather-info">
-            <h2>Weather Info</h2>
+            <h3>Weather Info</h3>
             {data.map((item, index) => (
                 <WeatherItem key={index} weather={item.weather} feeling={item.feeling}/>
             ))}

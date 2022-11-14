@@ -1,0 +1,17 @@
+.weather-info {
+
+}
+
+.weather-item {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+
+.weather-item li {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}

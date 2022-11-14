@@ -1,6 +1,8 @@
 import { useState } from 'react';
+import './style.css';
+import { prefix } from '../../const';
 
-export const Journal = () => {
+export const Journal = ({ setWeatherData }) => {
     const [city, setCity] = useState('');
     const [country, setCountry] = useState('');
     const [feeling, setFeeling] = useState('');
@@ -12,7 +14,7 @@ export const Journal = () => {
             country,
             feeling,
         }
-        const response = await fetch('/add', {
+        const response = await fetch(`${prefix}/add`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -20,24 +22,32 @@ export const Journal = () => {
             body: JSON.stringify(payload),
         });
         const data = await response.json();
-        console.log(data);
+        setWeatherData(data);
     }
 
     return (
-        <>
-            <header>Weather Journal</header>
+        <div className="weather-journal">
+            <h3>Weather Journal</h3>
             <form className="form">
-                <label htmlFor="city">City</label>
-                <input type="text" id="city" name="city" value={city} onChange={(e) => setCity(e.target.value)}/>
+                <div className="form-group">
+                    <label htmlFor="city">City</label>
+                    <input type="text" id="city" name="city" value={city} onChange={(e) => setCity(e.target.value)}/>
+                </div>
 
-                <label htmlFor="country">Country</label>
-                <input type="text" id="country" name="country" value={country} onChange={(e) => setCountry(e.target.value)}/>
+                <div className="form-group">
+                    <label htmlFor="country">Country</label>
+                    <input type="text" id="country" name="country" value={country}
+                           onChange={(e) => setCountry(e.target.value)}/>
+                </div>
 
-                <label htmlFor="feeling">How are you feeling?</label>
-                <input type="text" id="feeling" name="feeling" value={feeling} onChange={(e) => setFeeling(e.target.value)}/>
+                <div className="form-group">
+                    <label htmlFor="feeling">How are you feeling?</label>
+                    <input type="text" id="feeling" name="feeling" value={feeling}
+                           onChange={(e) => setFeeling(e.target.value)}/>
+                </div>
 
                 <button type="submit" onClick={addEntry}>Submit</button>
             </form>
-        </>
+        </div>
     )
 }
